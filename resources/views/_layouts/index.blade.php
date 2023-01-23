@@ -9,16 +9,16 @@
     <!-- ./ Preloader -->
 
     <!-- Sidebar group -->
-    <div class="sidebar-group">
+    {{-- <div class="sidebar-group"> --}}
 
         <!-- BEGIN: Settings -->
-        @include('_layouts.sidebar')
+        {{-- @include('_layouts.sidebar') --}}
         <!-- END: Settings -->
 
         <!-- BEGIN: Chat List -->
         <!-- END: Chat List -->
 
-    </div>
+    {{-- </div> --}}
     <!-- ./ Sidebar group -->
 
     <!-- Layout wrapper -->
@@ -39,7 +39,7 @@
                 <!-- Content -->
 
                 <div class="content ">
-                    @include('_layouts.chardTitle')
+                    {{-- @include('_layouts.chardTitle') --}}
 
                     @yield('content')
 

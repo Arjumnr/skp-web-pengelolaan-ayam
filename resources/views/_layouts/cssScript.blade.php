@@ -15,3 +15,4 @@
 
     <!-- App scripts -->
     <script src="{{ asset('templates/assets/js/app.min.js') }}"></script>
+<!-- Main scripts -->
