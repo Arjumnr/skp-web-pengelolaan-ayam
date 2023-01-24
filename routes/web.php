@@ -28,14 +28,13 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/authh', [LoginController::class, 'authenticate'])->name('loginPost');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 //ayam
-Route::get('/ayam-masuk', [AyamController::class, 'indexAyamMasuk'])->name('indexAyamMasuk');
 // Route::get('/register', [RegisterController::class, 'index'])->name('register');
 
 
 Route::group(['middleware' => ['auth']], function () {
     // dd(['cekRole:1']);
     Route::group(['middleware' => ['cekRole:1']], function () {
-        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        // Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
         //WISATA
         // Route::group(['prefix' => '/wisata'], function () {
@@ -52,7 +51,14 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     Route::group(['middleware' => ['cekRole:2']], function () {
-        // Route::get('/user', [UserController::class, 'index'])->name('indexUser');
+        // Route::get('/ayam-masuk', [AyamController::class, 'indexAyamMasuk'])->name('indexAyamMasuk');
+        // USER
+        Route::group(['prefix' => '/'], function () {
+            Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+            Route::get('/ayam-masuk', [AyamController::class, 'indexAyamMasuk'])->name('indexAyamMasuk');
+            Route::get('/ayam-keluar', [AyamController::class, 'indexAyamKeluar'])->name('indexAyamKeluar');
+            // Route::get('/users', [UserController::class, 'getDataUser'])->name('getDataUser');
+        });
     });
 
 
@@ -70,7 +76,6 @@ Route::get('/tes', function () {
     // $user = User::where('person_id', '=', 1);
     // var_dump($user->toArray()); // <---- or toJson()
     //cek session 
-    dd(session()->all());
+    // dd(session()->all());
     echo '</pre>';
 });
-

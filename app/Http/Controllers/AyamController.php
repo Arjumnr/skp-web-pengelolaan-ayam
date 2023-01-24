@@ -9,6 +9,16 @@ class AyamController extends Controller
     //Ayam Masuk
     public function indexAyamMasuk()
     {
-        return view('peternak.ayam.masuk.index');
+        return view('peternak.ayam.masuk.index')->with([
+            'active' => 'active',
+        ]);
+    }
+
+    public function indexAyamKeluar()
+    {
+        
+        return view('peternak.ayam.keluar.index')->with([
+            'active' => 'active',
+        ]);
     }
 }
