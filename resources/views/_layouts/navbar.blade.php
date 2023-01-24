@@ -76,7 +76,7 @@
                             </div>
                             <div class="list-group">
                                 <a href="#" class="list-group-item">View Profile</a>
-                                <a href="{{ route('login') }}" class="list-group-item text-danger">Sign Out!</a>
+                                <a href="{{ route('logout') }}" class="list-group-item text-danger">Sign Out!</a>
                             </div>
 
                         </div>
