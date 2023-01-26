@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('tb_ayam', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('username');
-            $table->string('password');
-            $table->integer('role');
-            $table->string('alamat')->nullable();
+            $table->integer('user_id')->nullable();
+            $table->string('nama_pembeli')->nullable();
+            $table->string('nomor');
+            $table->integer('jumlah');
+            $table->integer('total_berat');
+            $table->string('umur')->nullable();
+            $table->enum('status', ['masuk', 'keluar']);
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        //
     }
 };

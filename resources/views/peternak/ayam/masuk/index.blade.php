@@ -1,53 +1,57 @@
 @extends('_layouts.index')
 @section('content')
-
     <div class="animated fadeIn">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <strong class="card-title">Data Ayam Masuk</strong>
-                        <a href="" class="btn btn-primary btn-sm float-right">Tambah Data</a>
+                        <a href="" data-toggle="modal" data-target="#mediumModal"
+                            class="btn btn-primary btn-sm float-right">Tambah Data</a>
                     </div>
+                    {{-- Data table ayam masuk --}}
                     <div class="card-body">
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Jenis</th>
+                                    <th>Nomor</th>
                                     <th>Jumlah</th>
-                                    <th>Harga</th>
-                                    <th>Alamat</th>
-                                    <th>Deskripsi</th>
+                                    <th>Total Berat</th>
+                                    <th>Umur</th>
+                                    <th>Tanggal</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($ayam as $item)
+                                @foreach ($data as $item => $value)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->nama }}</td>
-                                        <td>{{ $item->jenis }}</td>
-                                        <td>{{ $item->jumlah }}</td>
-                                        <td>{{ $item->harga }}</td>
-                                        <td>{{ $item->alamat }}</td>
-                                        <td>{{ $item->deskripsi }}</td>
-                                        <td><img src="{{ asset('storage/' . $item->image) }}" alt="" width="100px"></td>
-                                        <td>
-                                            <a href="{{ route('ayam.edit', $item->id) }}" class="btn btn-primary">Edit</a>
-                                            <form action="{{ route('ayam.destroy', $item->id) }}" method="POST">
+                                        <td>{{ $value->nomor }}</td>
+                                        <td>{{ $value->jumlah }}</td>
+                                        <td>{{ $value->total_berat }}</td>
+                                        <td>{{ $value->umur }}</td>
+                                        <td>{{ $value->created_at->format('d-m-Y') }}</td>
+                                        <td class="d-flex justify-content-around">
+                                            <a data-toggle="modal" data-target="#mediumModal"
+                                                data-attr="{{ route('showAyamMasuk', $value->id) }}"
+                                                class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                            <form action="" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm"><i
+                                                        class="fa fa-trash"></i></button>
                                             </form>
                                         </td>
-                                    </tr>
-                                @endforeach --}}
-                            </tbody>
+                                @endforeach
                         </table>
+                        @include('peternak.ayam.masuk.modal')
+                        @include('peternak.ayam.masuk.js')
+
+
                     </div>
                 </div>
             </div>
         </div>
-    @endsection
+    </div>
+@endsection

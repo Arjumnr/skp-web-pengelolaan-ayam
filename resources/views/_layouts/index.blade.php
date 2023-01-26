@@ -1,4 +1,5 @@
 @include('_layouts.header')
+@include('_layouts.cssScript')
 
 <body>
     <!-- Left Panel -->
@@ -10,6 +11,7 @@
         @include('_layouts.navbar')
         <!-- /#header -->
         <!-- Content -->
+
         <div class="content">
             <!-- Animated -->
             @yield('content')
@@ -17,9 +19,9 @@
         </div>
         <!-- /.content -->
         <div class="clearfix"></div>
-        @include('_layouts.footer')
     </div>
-    @include('_layouts.cssScript')
 </body>
+@include('_layouts.footer')
+
 
 </html>

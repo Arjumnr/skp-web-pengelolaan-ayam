@@ -56,6 +56,13 @@ Route::group(['middleware' => ['auth']], function () {
         Route::group(['prefix' => '/'], function () {
             Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
             Route::get('/ayam-masuk', [AyamController::class, 'indexAyamMasuk'])->name('indexAyamMasuk');
+            //show
+            Route::get('/ayam-masuk/show/{id}', [AyamController::class, 'showAyamMasuk'])->name('showAyamMasuk');
+            //save
+            Route::post('/ayam-masuk/save', [AyamController::class, 'storeAyamMasuk'])->name('ayamMasuk.store');
+            //update
+            Route::put('/ayam-masuk/update/{id}', [AyamController::class, 'updateAyamMasuk'])->name('updateAyamMasuk');
+
             Route::get('/ayam-keluar', [AyamController::class, 'indexAyamKeluar'])->name('indexAyamKeluar');
             // Route::get('/users', [UserController::class, 'getDataUser'])->name('getDataUser');
         });
