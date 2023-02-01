@@ -24,7 +24,8 @@
                                     <th>Total Berat</th>
                                     <th>Umur</th>
                                     <th>Hari/Tanggal</th>
-                                    <th width="280px">Action</th>
+                                    <th>Action</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -82,21 +83,12 @@
                         name: 'action',
                         orderable: false,
                         searchable: false
+
                     },
                 ]
             });
 
 
-
-            // $('#createData').click(function() {
-            //     // $('#btnSave').val("create-ayam-masuk");
-            //     // $('#id').val('');
-            //     // $('#dataForm').trigger("reset");
-            //     // $('#modalHeading').html("Tambah Data Ayam Masuk");
-            //     //show modal .modal not function
-            //     $('#mediuModal').modal('swoh');
-
-            // });
 
             $(document).on('click', '#createData', function() {
                 console.log('create data');
@@ -145,6 +137,85 @@
             });
 
 
+            $('body').on('click', '.editAyamMasuk', function() {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                var id = $(this).data('id');
+
+                $.get("{{ route('ayam-masuk.index') }}" + '/' + id + '/edit', function(data) {
+                    console.log(data);
+                    $('#modalHeading').html("Update Daya");
+                    $('#btnSave').html("Update");
+                    $('#id').val(data.id);
+                    $('#nomor').val(data.nomor);
+                    $('#jumlah').val(data.jumlah);
+                    $('#total_berat').val(data.total_berat);
+                    $('#umur').val(data.umur);
+                    $('#created_at').val(data.created_at);
+                })
+
+                //klik close
+               
+
+                $('#btnSave').click(function(e) {
+                    e.preventDefault();
+                    $(this).html('Sending..');
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                    $.ajax({
+                        data: {
+                            nomor: $('#nomor').val(),
+                            jumlah: $('#jumlah').val(),
+                            total_berat: $('#total_berat').val(),
+                            umur: $('#umur').val(),
+                            created_at: $('#created_at').val(),
+                        },
+                        url: "{{ route('ayam-masuk.store') }}" + '/' + id,
+                        type: "PUT",
+                        dataType: 'json',
+                    }).then(function(data) {
+                        console.log(data);
+                        if (data.status == 'success') {
+                            $('#dataForm').trigger("reset");
+                            $('#mediumModal').modal('hide');
+                            $('.modal-backdrop').remove();
+                            //hapus tampilan gelap
+
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Data berhasil diupdate',
+                                showConfirmButton: false,
+                                timer: 1500
+                            }).then(function() {
+                                table.draw();
+
+                            })
+                        } else if (data.status == 'error') {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'error',
+                                title: 'Data gagal diupdate',
+                                showConfirmButton: false,
+                                timer: 1500
+
+                            })
+                        }
+                    })
+                })
+            });
+
+
+
+
             $('body').on('click', '.deleteAyamMasuk', function() {
 
                 var id = $(this).data("id");
@@ -163,17 +234,21 @@
                         $.ajax({
                             type: "DELETE",
                             url: "{{ route('ayam-masuk.store') }}" + '/' + id,
+                            dataType: 'json',
+
                             success: function(data) {
-                                table.draw();
                                 Swal.fire({
                                     position: 'center',
                                     icon: 'success',
                                     title: 'Data berhasil dihapus',
                                     showConfirmButton: false,
                                     timer: 1500
+                                }).then(function() {
+                                    table.draw();
                                 })
                             },
                             error: function(data) {
+                                console.log('Error:', data);
                                 Swal.fire({
                                     position: 'center',
                                     icon: 'error',

@@ -4,7 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\AyamController;
+use App\Http\Controllers\PakanController;
+use App\Http\Controllers\Ayam\AyamMasukController;
+use App\Http\Controllers\Ayam\AyamKeluarController;
+use App\Http\Controllers\Obat\ObatMasukController;
+use App\Http\Controllers\Pakan\PakanMasukController;
+use App\Http\Controllers\Pakan\PakanKeluarController;
+use App\Http\Controllers\Pakan\PakanTerpakaiController;
 
 
 /*
@@ -55,19 +61,17 @@ Route::group(['middleware' => ['auth']], function () {
         // USER
         Route::group(['prefix' => '/'], function () {
             Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-            // Route::get('/ayam-masuk', [AyamController::class, 'indexAyamMasuk'])->name('indexAyamMasuk');
-            Route::resource('/ayam-masuk', AyamController::class);
-            //show
-            // Route::get('/ayam-masuk/show/{id}', [AyamController::class, 'showAyamMasuk'])->name('showAyamMasuk');
-            //save
-            // Route::post('/ayam-masuk/store', [AyamController::class, 'storeAyamMasuk'])->name('storeAyamMasuk');
-            // //update
-            // Route::put('/ayam-masuk/update/{id}', [AyamController::class, 'updateAyamMasuk'])->name('updateAyamMasuk');
-            // //delete
-            // Route::delete('/ayam-masuk/delete/{id}', [AyamController::class, 'deleteAyamMasuk'])->name('deleteAyamMasuk');
 
-            Route::get('/ayam-keluar', [AyamController::class, 'indexAyamKeluar'])->name('indexAyamKeluar');
-            // Route::get('/users', [UserController::class, 'getDataUser'])->name('getDataUser');
+            Route::resource('/ayam-masuk', AyamMasukController::class);
+            Route::resource('/ayam-keluar', AyamKeluarController::class);
+
+            Route::resource('/pakan-masuk', PakanMasukController::class);
+            Route::resource('/pakan-keluar', PakanKeluarController::class);
+            Route::resource('/pakan-terpakai', PakanTerpakaiController::class);
+
+
+
+          
         });
     });
 
