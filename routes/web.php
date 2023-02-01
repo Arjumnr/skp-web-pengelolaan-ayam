@@ -55,13 +55,16 @@ Route::group(['middleware' => ['auth']], function () {
         // USER
         Route::group(['prefix' => '/'], function () {
             Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-            Route::get('/ayam-masuk', [AyamController::class, 'indexAyamMasuk'])->name('indexAyamMasuk');
+            // Route::get('/ayam-masuk', [AyamController::class, 'indexAyamMasuk'])->name('indexAyamMasuk');
+            Route::resource('/ayam-masuk', AyamController::class);
             //show
-            Route::get('/ayam-masuk/show/{id}', [AyamController::class, 'showAyamMasuk'])->name('showAyamMasuk');
+            // Route::get('/ayam-masuk/show/{id}', [AyamController::class, 'showAyamMasuk'])->name('showAyamMasuk');
             //save
-            Route::post('/ayam-masuk/save', [AyamController::class, 'storeAyamMasuk'])->name('ayamMasuk.store');
-            //update
-            Route::put('/ayam-masuk/update/{id}', [AyamController::class, 'updateAyamMasuk'])->name('updateAyamMasuk');
+            // Route::post('/ayam-masuk/store', [AyamController::class, 'storeAyamMasuk'])->name('storeAyamMasuk');
+            // //update
+            // Route::put('/ayam-masuk/update/{id}', [AyamController::class, 'updateAyamMasuk'])->name('updateAyamMasuk');
+            // //delete
+            // Route::delete('/ayam-masuk/delete/{id}', [AyamController::class, 'deleteAyamMasuk'])->name('deleteAyamMasuk');
 
             Route::get('/ayam-keluar', [AyamController::class, 'indexAyamKeluar'])->name('indexAyamKeluar');
             // Route::get('/users', [UserController::class, 'getDataUser'])->name('getDataUser');

@@ -7,12 +7,12 @@
                 </li>
                 <li class="menu-title">Data Ayam</li>
                 <li class="{{ set_active('ayam-masuk') }}">
-                    <a href="{{ route('indexAyamMasuk') }}"><i class="menu-icon fa fa-laptop"></i>Ayam Masuk </a>
+                    <a href="{{ url('ayam-masuk') }}"><i class="menu-icon fa fa-laptop"></i>Ayam Masuk </a>
                 </li>
                 <li class="{{ set_active('ayam-keluar') }}">
-                    <a href="{{ route('indexAyamKeluar') }}"><i class="menu-icon fa fa-laptop"></i>Ayam Keluar </a>
+                    <a href="{{ url('ayam-masuk') }}"><i class="menu-icon fa fa-laptop"></i>Ayam Keluar </a>
                 </li>
-                <li class="menu-title">Data Pakan</li>
+                {{-- <li class="menu-title">Data Pakan</li>
                 <li class="{{ set_active('ayam-masuk') }}">
                     <a href="{{ route('indexAyamMasuk') }}"><i class="menu-icon fa fa-laptop"></i>Pakan Masuk </a>
                 </li>
@@ -25,7 +25,7 @@
                 </li>
                 <li class="{{ set_active('ayam-keluar') }}">
                     <a href="{{ route('indexAyamKeluar') }}"><i class="menu-icon fa fa-laptop"></i>Obat Keluar </a>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </nav>

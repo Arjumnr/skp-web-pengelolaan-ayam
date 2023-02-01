@@ -44,7 +44,7 @@ class LoginController extends Controller
         if ($cek == false) {
             return redirect()->back()->withErrors($cek)->withInput();
         } else {
-            $dataUser = ModelUser::where('username', $request->username)->first();
+            $dataUser = User::where('username', $request->username)->first();
          
             
             if ($dataUser) {
