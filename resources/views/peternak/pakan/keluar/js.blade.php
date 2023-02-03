@@ -41,7 +41,7 @@
             $('#btnSave').html('Simpan');
             $('#data_id').val('');
             $('#dataForm').trigger("reset");
-            $('#modalHeading').html("Tambah Data Ayam Keluar");
+            $('#modalHeading').html("Tambah Data Pakan Keluar");
             $('#modalPakanKeluar').modal('show');
         });
 
@@ -59,7 +59,7 @@
 
             $.get("{{ route('pakan-keluar.index') }}" + '/' + data_id + '/edit', function(data) {
                 console.log("data id = " + data.id);
-                $('#modalHeading').html("Edit Data Ayam Masuk");
+                $('#modalHeading').html("Edit Data Pakan Keluar");
                 $('#btnSave').val("edit-data");
                 $('#modalPakanKeluar').modal('show');
                 $('#data_id').val(data_id);

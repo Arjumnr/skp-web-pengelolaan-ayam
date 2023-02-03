@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Data Pakan Masuk</strong>
+                        <strong class="card-title">Data Pakan Keluar</strong>
                         <button type="button" href="javascript:void(0)" class="btn btn-info btn-sm float-right"
                             id="createData">Tambah Data</button>
                     </div>

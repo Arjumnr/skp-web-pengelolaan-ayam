@@ -9,31 +9,14 @@
         var table = $('.data-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('ayam-keluar.index') }}",
+            ajax: "{{ route('pakan-masuk.index') }}",
             columns: [{
                     data: 'DT_RowIndex',
                     name: 'DT_RowIndex'
                 },
                 {
-                    data: 'nomor',
-                    name: 'nomor'
-                },
-                {
-                    data: 'nama_pembeli',
-                    name: 'nama_pembeli'
-                },
-                
-                {
                     data: 'jumlah',
                     name: 'jumlah'
-                },
-                {
-                    data: 'total_berat',
-                    name: 'total_berat'
-                },
-                {
-                    data: 'umur',
-                    name: 'umur'
                 },
                 {
                     data: 'created_at',
@@ -53,11 +36,11 @@
             $('#btnSave').html('Simpan');
             $('#data_id').val('');
             $('#dataForm').trigger("reset");
-            $('#modalHeading').html("Tambah Data Ayam Keluar");
-            $('#modalAyamKeluar').modal('show');
+            $('#modalHeading').html("Tambah Data Pakan Masuk");
+            $('#modalPakanMasuk').modal('show');
         });
 
-        $('body').on('click', '.editAyamKeluar', function() {
+        $('body').on('click', '.editPakanMasuk', function() {
 
             $.ajaxSetup({
                 headers: {
@@ -69,17 +52,13 @@
 
             var data_id = $(this).data('id');
 
-            $.get("{{ route('ayam-keluar.index') }}" + '/' + data_id + '/edit', function(data) {
+            $.get("{{ route('pakan-masuk.index') }}" + '/' + data_id + '/edit', function(data) {
                 console.log("data id = " + data.id);
-                $('#modalHeading').html("Edit Data Ayam Masuk");
+                $('#modalHeading').html("Edit Data Pakan Masuk");
                 $('#btnSave').val("edit-data");
-                $('#modalAyamKeluar').modal('show');
+                $('#modalPakanMasuk').modal('show');
                 $('#data_id').val(data_id);
-                $('#nomor').val(data.nomor);
-                $('#nama_pembeli').val(data.nama_pembeli);
                 $('#jumlah').val(data.jumlah);
-                $('#total_berat').val(data.total_berat);
-                $('#umur').val(data.umur);
             })
 
 
@@ -91,14 +70,14 @@
             $(this).html('Sending..');
             $.ajax({
                 data: $('#dataForm').serialize(),
-                url: "{{ route('ayam-keluar.store') }}",
+                url: "{{ route('pakan-masuk.store') }}",
                 type: "POST",
                 dataType: 'json',
                 success: function(data) {
                     console.log(data);
 
                     $('#dataForm').trigger("reset");
-                    $('#modalAyamKeluar').modal('hide');
+                    $('#modalPakanMasuk').modal('hide');
                     $('.modal-backdrop').remove();
 
                     if (data.status == 'success') {
@@ -139,7 +118,7 @@
 
         
 
-        $('body').on('click', '.deleteAyamKeluar', function() {
+        $('body').on('click', '.deletePakanMasuk', function() {
 
             var id = $(this).data("id");
 
@@ -156,7 +135,7 @@
                     console.log(id);
                     $.ajax({
                         type: "DELETE",
-                        url: "{{ route('ayam-keluar.store') }}" + '/' + id,
+                        url: "{{ route('pakan-masuk.store') }}" + '/' + id,
                         dataType: 'json',
 
                         success: function(data) {

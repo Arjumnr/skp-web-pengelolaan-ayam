@@ -6,31 +6,28 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Data Ayam Masuk</strong>
-                        <button type="button" href="javascript:void(0)" class="btn btn-info btn-sm float-right"
-                            id="createData">Tambah Data</button>
-
+                        <strong class="card-title">Data Ayam Keluar</strong>
+                        <button type="button" id="createData" class="btn btn-info btn-sm float-right" data-toggle="modal"
+                            data-target="#mediumModal">Tambah Data</button>
                     </div>
                     <div class="card-body">
-
                         <table class="table table-bordered data-table">
                             <thead>
                                 <tr>
                                     <th>No</th>
                                     <th>Nomor</th>
-                                    <th>Jumlah (Ekor)</th>
-                                    <th>Total Berat (Kg)</th>
-                                    <th>Umur (Tahun)</th>
+                                    <th>Nama Pembeli</th>
+                                    <th>Jumlah</th>
+                                    <th>Total Berat</th>
+                                    <th>Umur</th>
                                     <th>Hari/Tanggal</th>
                                     <th>Action</th>
-
                                 </tr>
                             </thead>
                             <tbody>
                             </tbody>
                         </table>
-                        @include('peternak.ayam.masuk.modal')
-
+                        @include('peternak.ayam.keluar.modal')
                     </div>
                 </div>
             </div>
@@ -39,5 +36,5 @@
 @endsection
 
 @section('script')
-    @include('peternak.ayam.masuk.js')
+    @include('peternak.ayam.keluar.js')
 @endsection
