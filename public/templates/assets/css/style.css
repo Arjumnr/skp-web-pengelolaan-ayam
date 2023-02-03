@@ -404,6 +404,10 @@ img {
 .modal-header {
   display: block; }
 
+.modal-backdrop {
+  opacity: 0.5 !important;
+}
+
 .mb-0 {
   margin-bottom: 0; }
 
@@ -1568,6 +1572,7 @@ header .form-inline {
     padding: 0 7px;
     width: inherit;
     text-align: center; }
+    
 
 .social-buttons .card-body p button {
   padding-top: 0;

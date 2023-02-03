@@ -10,23 +10,27 @@
                     <a href="{{ url('ayam-masuk') }}"><i class="menu-icon fa fa-laptop"></i>Ayam Masuk </a>
                 </li>
                 <li class="{{ set_active('ayam-keluar') }}">
-                    <a href="{{ url('ayam-masuk') }}"><i class="menu-icon fa fa-laptop"></i>Ayam Keluar </a>
+                    <a href="{{ url('ayam-keluar') }}"><i class="menu-icon fa fa-laptop"></i>Ayam Keluar </a>
                 </li>
                 <li class="menu-title">Data Pakan</li>
                 <li class="{{ set_active('pakan-masuk') }}">
                     <a href="{{ url('pakan-masuk') }}"><i class="menu-icon fa fa-laptop"></i>Pakan Masuk </a>
                 </li>
                 <li class="{{ set_active('pakan-keluar') }}">
-                    <a href="{{ route('pakan-keluar') }}"><i class="menu-icon fa fa-laptop"></i>Pakan Keluar </a>
+                    <a href="{{ url('pakan-keluar') }}"><i class="menu-icon fa fa-laptop"></i>Pakan Keluar </a>
                 </li>
-                {{-- <li class="menu-title">Data Obat</li>
-                <li class="{{ set_active('ayam-masuk') }}">
-                    <a href="{{ route('indexAyamMasuk') }}"><i class="menu-icon fa fa-laptop"></i>Obat Masuk </a>
+                <li class="{{ set_active('pakan-terpakai') }}">
+                    <a href="{{ url('pakan-terpakai') }}"><i class="menu-icon fa fa-laptop"></i>Pakan Terpakai </a>
                 </li>
-                <li class="{{ set_active('ayam-keluar') }}">
-                    <a href="{{ route('indexAyamKeluar') }}"><i class="menu-icon fa fa-laptop"></i>Obat Keluar </a>
-                </li> --}}
+                <li class="menu-title">Data Obat</li>
+                <li class="{{ set_active('obat-masuk') }}">
+                    <a href="{{ url('obat-masuk') }}"><i class="menu-icon fa fa-laptop"></i>Obat Masuk </a>
+                </li>
+
+                
             </ul>
+            
+
         </div>
     </nav>
 </aside>

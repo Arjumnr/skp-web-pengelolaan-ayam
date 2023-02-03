@@ -12,8 +12,8 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">$<span class="count">23569</span></div>
-                                    <div class="stat-heading">Revenue</div>
+                                    <div class="stat-text">23569</span></div>
+                                    <div class="stat-heading">Jumlah Ayam </div>
                                 </div>
                             </div>
                         </div>
@@ -30,8 +30,8 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count">3435</span></div>
-                                    <div class="stat-heading">Sales</div>
+                                    <div class="stat-text">3435</span></div>
+                                    <div class="stat-heading">Jumlah Pakan</div>
                                 </div>
                             </div>
                         </div>
@@ -48,8 +48,8 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count">349</span></div>
-                                    <div class="stat-heading">Templates</div>
+                                    <div class="stat-text">349</span></div>
+                                    <div class="stat-heading">Jumlah Obat</div>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            {{-- <div class="col-lg-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-five">
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <!-- /Widgets -->
        
