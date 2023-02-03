@@ -49,7 +49,7 @@
             $('#data_id').val('');
             $('#dataForm').trigger("reset");
             $('#modalHeading').html("Tambah Data Ayam Masuk");
-            $('#mediumModal').modal('show');
+            $('#modalAyamMasuk').modal('show');
         });
 
         $('body').on('click', '.editAyamMasuk', function() {
@@ -68,7 +68,7 @@
                 console.log("data id = " + data.id);
                 $('#modalHeading').html("Edit Data Ayam Masuk");
                 $('#btnSave').val("edit-data");
-                $('#mediumModal').modal('show');
+                $('#modalAyamMasuk').modal('show');
                 $('#data_id').val(data_id);
                 $('#nomor').val(data.nomor);
                 $('#jumlah').val(data.jumlah);
@@ -92,7 +92,7 @@
                     console.log(data);
 
                     $('#dataForm').trigger("reset");
-                    $('#mediumModal').modal('hide');
+                    $('#modalAyamMasuk').modal('hide');
                     $('.modal-backdrop').remove();
 
                     if (data.status == 'success') {
@@ -185,24 +185,5 @@
 
     });
 
-    // function modalShow() {
-    //     $('#mediumModal').modal('show');
-    //     $('#modalHeading').html("Tambah Data Ayam Masuk");
-    //     $('#btnUpdate').hide();
-    //     $('#btnSave').show();
-
-    // }
-
-
-
-
-
-
-
-
-    // $('#btnClose').click(function() {
-    //     $('#dataForm').trigger("reset");
-    //     $('#mediumModal').modal('hide');
-    //     $('.modal-backdrop').remove();
-    // })
+    
 </script>

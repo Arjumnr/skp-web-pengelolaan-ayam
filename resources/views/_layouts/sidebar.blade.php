@@ -23,8 +23,8 @@
                     <a href="{{ url('pakan-terpakai') }}"><i class="menu-icon fa fa-laptop"></i>Pakan Terpakai </a>
                 </li>
                 <li class="menu-title">Data Obat</li>
-                <li class="{{ set_active('obat-masuk') }}">
-                    <a href="{{ url('obat-masuk') }}"><i class="menu-icon fa fa-laptop"></i>Obat Masuk </a>
+                <li class="{{ set_active('obat') }}">
+                    <a href="{{ url('obat') }}"><i class="menu-icon fa fa-laptop"></i>Obat </a>
                 </li>
 
                 

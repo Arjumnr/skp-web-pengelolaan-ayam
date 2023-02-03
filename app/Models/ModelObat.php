@@ -12,8 +12,7 @@ class ModelObat extends Model
     protected $table = 'tb_obat';
     protected $fillable = [
         'user_id',
-        'jenis_obat',
-        'status',
+        'nama_obat',
 
     ];
     public function getCreatedAtAttribute($value)

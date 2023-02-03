@@ -65,6 +65,9 @@ Route::group(['middleware' => ['auth']], function () {
             Route::resource('/ayam-masuk', AyamMasukController::class);
             Route::resource('/ayam-keluar', AyamKeluarController::class);
 
+            Route::resource('/obat', ObatMasukController::class);
+
+
             Route::resource('/pakan-masuk', PakanMasukController::class);
             Route::resource('/pakan-keluar', PakanKeluarController::class);
             Route::resource('/pakan-terpakai', PakanTerpakaiController::class);

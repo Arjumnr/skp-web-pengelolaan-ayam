@@ -1,4 +1,4 @@
-<div class="modal" id="mediumModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal" id="modalAyamMasuk" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
