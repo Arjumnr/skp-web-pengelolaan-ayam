@@ -9,8 +9,10 @@ use Illuminate\Support\Carbon;
 class ModelPakan extends Model
 {
     use HasFactory;
+    protected $table = 'tb_pakan';
     protected $fillable = [
         'user_id',
+        'keluar_ke',
         'jumlah',
         'status',
 
