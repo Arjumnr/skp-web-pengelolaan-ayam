@@ -1,4 +1,4 @@
-<div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+<div class="modal" id="modals" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,7 +8,8 @@
             <div class="modal-body modal-body">
                 <form id="dataForm" name="dataForm">
                     @csrf
-                    <input type="hidden" name="id" id="id">
+                    <input type="hidden" name="data_id" id="data_id">
+
                     <div class="errMsgContainer mb-3">
 
                     </div>

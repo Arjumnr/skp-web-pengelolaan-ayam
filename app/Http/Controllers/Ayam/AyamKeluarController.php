@@ -13,19 +13,16 @@ class AyamKeluarController extends Controller
     {
         $user_id = auth()->user()->id;
         if ($request->ajax()) {
-            $data = ModelAyam::where('status', 'keluar')->where('user_id', $user_id)->get();
-            if($data){
-                return Datatables::of($data)
-                    ->addIndexColumn()
-                    ->addColumn('action', function ($row) {
-                        $btn = '<button  data-toggle="modal" data-target="#mediumModal" data-id="' . $row->id . '" data-original-title="Edit" class="edit btn btn-primary btn-sm editAyamKeluar ti-pencil"></button>';
-                        $btn = $btn . ' <button href="javascript:void(0)" data-toggle="tooltip"  data-id="' . $row->id . '" data-original-title="Delete" class="btn btn-danger btn-sm deleteAyamKeluar ti-trash"></button>';
-                        return $btn;
-                    })
-                    ->rawColumns(['action'])
-                    ->make(true);
-            }
-
+            $data = ModelAyam::where('status', 'keluar')->where('user_id', $user_id)->latest()->get();
+            return Datatables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function ($row) {
+                    $btn = '<a href="javascript:void(0)" data-toggle="tooltip" data-id="' . $row->id . '" data-original-title="Edit" class="edit btn btn-primary btn-sm editAyamKeluar ti-pencil"></a>';
+                    $btn = $btn . ' <button href="javascript:void(0)" data-toggle="tooltip"  data-id="' . $row->id . '" data-original-title="Delete" class="btn btn-danger btn-sm deleteAyamKeluar ti-trash"></button>';
+                    return $btn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
         }
         return view('peternak.ayam.keluar.index');
     }
@@ -35,7 +32,7 @@ class AyamKeluarController extends Controller
         $user_id = auth()->user()->id;
         try {
             ModelAyam::updateOrCreate(
-                ['id' => $request->ayam_id],
+                ['id' => $request->data_id],
                 [
                     'user_id' => $user_id,
                     'nomor' => $request->nomor,
@@ -46,11 +43,11 @@ class AyamKeluarController extends Controller
                     'status' => 'keluar'
                 ]
             );
-            return response()->json(['status' => 'success', 'message' => 'Data saved successfully.']);
+            return response()->json(['status' => 'success', 'message' => 'Save data successfully.']);
         } catch (\Exception $e) {
             return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
         }
-        // return response()->json($user_id);
+        // return response()->json($request->all());
     }
 
     public function edit($id)
@@ -61,20 +58,27 @@ class AyamKeluarController extends Controller
 
     public function update(Request $request, $id)
     {
-        try{
-            $data = ModelAyam::find($id);
-
+        // $user_id = auth()->user()->id;
+        $data = ModelAyam::find($id);
+        // $cekNomor = ModelAyam::where('nomor', $request->nomor)->where('user_id', $user_id)->first();
+        // if ($cekNomor) {
+        //     return response()->json([
+        //         'status' => 'error',
+        //         'message' => 'Nomor sudah ada'
+        //     ]);
+        // } else {
+        try {
             $data->update([
                 'nomor' => $request->nomor,
-                'nama_pembeli' => $request->nama_pembeli,
                 'jumlah' => $request->jumlah,
                 'total_berat' => $request->total_berat,
                 'umur' => $request->umur,
             ]);
-            return response()->json(['status' => 'success', 'message' => 'Data saved successfully.']);
-        }catch(\Exception $e){
+            return response()->json(['status' => 'success', 'message' => 'Update data successfully.']);
+        } catch (\Exception $e) {
             return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
         }
+        // }
     }
 
 
