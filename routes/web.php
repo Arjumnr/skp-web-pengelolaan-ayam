@@ -33,6 +33,7 @@ use App\Http\Controllers\Pakan\PakanTerpakaiController;
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/authh', [LoginController::class, 'authenticate'])->name('loginPost');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/daftar', [RegisterController::class, 'daftar'])->name('registerPost');
 //ayam
 // Route::get('/register', [RegisterController::class, 'index'])->name('register');
 

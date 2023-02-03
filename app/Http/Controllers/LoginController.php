@@ -59,7 +59,7 @@ class LoginController extends Controller
                         if ($user->role == 1) {
                             return redirect()->intended('/');
                         } elseif ($user->role == 2) {
-                            return redirect()->intended('/register');
+                            return redirect()->intended('/');
                         }
                     }
                 } else {
