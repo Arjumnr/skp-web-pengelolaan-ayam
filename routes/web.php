@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AkunController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PakanController;
 use App\Http\Controllers\Ayam\AyamMasukController;
 use App\Http\Controllers\Ayam\AyamKeluarController;
+use App\Http\Controllers\AyamController;
 use App\Http\Controllers\Obat\ObatMasukController;
 use App\Http\Controllers\Pakan\PakanMasukController;
 use App\Http\Controllers\Pakan\PakanKeluarController;
@@ -40,8 +42,14 @@ Route::post('/daftar', [RegisterController::class, 'daftar'])->name('registerPos
 
 Route::group(['middleware' => ['auth']], function () {
     // dd(['cekRole:1']);
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
     Route::group(['middleware' => ['cekRole:1']], function () {
-        // Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::resource('/akun', AkunController::class);
+        Route::resource('/ayam', AyamController::class);
+        Route::resource('/pakan', AkunController::class);
+        Route::resource('/obat', AkunController::class);
+
 
         //WISATA
         // Route::group(['prefix' => '/wisata'], function () {
@@ -61,7 +69,7 @@ Route::group(['middleware' => ['auth']], function () {
         // Route::get('/ayam-masuk', [AyamController::class, 'indexAyamMasuk'])->name('indexAyamMasuk');
         // USER
         Route::group(['prefix' => '/'], function () {
-            Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+            // Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
             Route::resource('/ayam-masuk', AyamMasukController::class);
             Route::resource('/ayam-keluar', AyamKeluarController::class);

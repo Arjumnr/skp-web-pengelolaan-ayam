@@ -1,16 +1,25 @@
 <aside id="left-panel" class="left-panel">
-    
+
     <nav class="navbar navbar-expand-sm navbar-default">
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="{{ set_active('/') }}">
-                    <a href="{{ route('dashboard')}}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    <a href="{{ route('dashboard') }}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                 </li>
-                <li class="menu-title">Data Ayam</li>
-                <li class="{{ set_active('ayam-masuk') }}">
-                    <a href="{{ url('ayam-masuk') }}"><i class="menu-icon fa fa-laptop"></i>Ayam Masuk </a>
+                <li class="menu-title">Data Peternak</li>
+                <li class="{{ set_active('akun') }}">
+                    <a href="{{ url('akun') }}"><i class="menu-icon fa fa-laptop"></i> Akun </a>
                 </li>
-                <li class="{{ set_active('ayam-keluar') }}">
+                <li class="{{ set_active('ayam') }}">
+                    <a href="{{ url('ayam') }}"><i class="menu-icon fa fa-laptop"></i> Ayam </a>
+                </li>
+                <li class="{{ set_active('pakan') }}">
+                    <a href="{{ url('pakan') }}"><i class="menu-icon fa fa-laptop"></i> Pakan </a>
+                </li>
+                <li class="{{ set_active('obat') }}">
+                    <a href="{{ url('obat') }}"><i class="menu-icon fa fa-laptop"></i> Obat </a>
+                </li>
+                {{-- <li class="{{ set_active('ayam-keluar') }}">
                     <a href="{{ url('ayam-keluar') }}"><i class="menu-icon fa fa-laptop"></i>Ayam Keluar </a>
                 </li>
                 <li class="menu-title">Data Pakan</li>
@@ -26,11 +35,11 @@
                 <li class="menu-title">Data Obat</li>
                 <li class="{{ set_active('obat') }}">
                     <a href="{{ url('obat') }}"><i class="menu-icon fa fa-laptop"></i>Obat </a>
-                </li>
+                </li> --}}
 
-                
+
             </ul>
-            
+
 
         </div>
     </nav>

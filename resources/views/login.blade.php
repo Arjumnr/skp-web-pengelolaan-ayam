@@ -37,16 +37,16 @@
                 </div>
 
                 <div class="login-form">
-                                        <h3 class="text-center">Register</h3>
+                    <h3 class="text-center">Login</h3>
 
-                    {{-- @if (Session::has('danger'))
+                    @if (Session::has('danger'))
                         <div class="alert alert-danger">
                             {{ Session::get('danger') }}
                             @php
                                 Session::forget('danger');
                             @endphp
                         </div>
-                    @endif --}}
+                    @endif
                     <form action="{{ route('loginPost') }}" method="POST">
                         @csrf
                         <div class="form-group">

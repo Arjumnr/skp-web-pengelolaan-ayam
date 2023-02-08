@@ -16,15 +16,16 @@ class LoginController extends Controller
 {
     public function index()
     {
-        
+
         if ($user = Auth::user()) {
             if ($user->role == 1) {
                 return redirect()->intended('/');
-            } elseif ($user->role == 2) {
+            } else if ($user->role == 2) {
                 return redirect()->intended('/');
             }
+        }else{
+            return view('login');
         }
-        return view('login');
     }
 
     public function authenticate(Request $request)
@@ -39,26 +40,25 @@ class LoginController extends Controller
                 'password.required' => 'Password tidak boleh kosong',
             ]
         );
-        
+
 
         if ($cek == false) {
             return redirect()->back()->withErrors($cek)->withInput();
         } else {
             $dataUser = User::where('username', $request->username)->first();
-         
-            
+
             if ($dataUser) {
                 if (Hash::check($request->password, $dataUser->password)) {
-                    
+
                     $credensial = $request->only('username', 'password');
-                    
+
                     if (Auth::attempt($credensial)) {
                         $user = Auth::user();
                         $request->session()->regenerate();
-
                         if ($user->role == 1) {
                             return redirect()->intended('/');
-                        } elseif ($user->role == 2) {
+                        } 
+                        else if ($user->role == 2) {
                             return redirect()->intended('/');
                         }
                     }
