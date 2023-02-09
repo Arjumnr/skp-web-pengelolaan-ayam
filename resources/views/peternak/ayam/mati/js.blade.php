@@ -15,6 +15,10 @@
                     name: 'DT_RowIndex'
                 },
                 {
+                    data: 'jumlah',
+                    name: 'jumlah'
+                },
+                {
                     data: 'created_at',
                     name: 'created_at'
                 },
@@ -61,7 +65,7 @@
         });
 
         $('#btnSave').click(function(e) {
-            // console.log($('#dataForm').serialize());
+            console.log($('#dataForm').serialize());
             e.preventDefault();
             $(this).html('Sending..');
             $.ajax({
@@ -112,7 +116,7 @@
             })
         });
 
-        
+
 
         $('body').on('click', '.deleteAyamMati', function() {
 
@@ -165,6 +169,4 @@
 
 
     });
-
-    
 </script>

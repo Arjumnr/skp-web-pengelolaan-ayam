@@ -1,16 +1,20 @@
 <?php
 
-use App\Http\Controllers\AkunController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AkunController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\PakanController;
+
+use App\Http\Controllers\AyamController;
 use App\Http\Controllers\Ayam\AyamMasukController;
 use App\Http\Controllers\Ayam\AyamKeluarController;
-use App\Http\Controllers\AyamController;
+use App\Http\Controllers\Ayam\AyamMatiController;
+
 use App\Http\Controllers\Obat\ObatMasukController;
 use App\Http\Controllers\ObatController;
+
+use App\Http\Controllers\PakanController;
 use App\Http\Controllers\Pakan\PakanMasukController;
 use App\Http\Controllers\Pakan\PakanKeluarController;
 use App\Http\Controllers\Pakan\PakanTerpakaiController;
@@ -74,13 +78,14 @@ Route::group(['middleware' => ['auth']], function () {
 
             Route::resource('/ayam-masuk', AyamMasukController::class);
             Route::resource('/ayam-keluar', AyamKeluarController::class);
-
-            Route::resource('/obat', ObatMasukController::class);
-
+            Route::resource('/ayam-mati', AyamMatiController::class);
 
             Route::resource('/pakan-masuk', PakanMasukController::class);
             Route::resource('/pakan-keluar', PakanKeluarController::class);
             Route::resource('/pakan-terpakai', PakanTerpakaiController::class);
+
+            Route::resource('/obat', ObatMasukController::class);
+
 
 
 

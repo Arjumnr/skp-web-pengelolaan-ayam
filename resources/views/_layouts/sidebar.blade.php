@@ -13,6 +13,9 @@
                 <li class="{{ set_active('ayam-keluar') }}">
                     <a href="{{ url('ayam-keluar') }}"><i class="menu-icon fa fa-file"></i>Ayam Keluar </a>
                 </li>
+                <li class="{{ set_active('ayam-mati') }}">
+                    <a href="{{ url('ayam-mati') }}"><i class="menu-icon fa fa-file"></i>Ayam Mati </a>
+                </li>
                 <li class="menu-title">Data Pakan</li>
                 <li class="{{ set_active('pakan-masuk') }}">
                     <a href="{{ url('pakan-masuk') }}"><i class="menu-icon fa fa-archive"></i>Pakan Masuk </a>

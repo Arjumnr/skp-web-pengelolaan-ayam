@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id')->nullable();
             $table->string('nama_pembeli')->nullable();
-            $table->string('nomor');
+            $table->string('nomor')->nullable();
             $table->integer('jumlah');
-            $table->integer('total_berat');
+            $table->integer('total_berat')->nullable();
             $table->string('umur')->nullable();
-            $table->enum('status', ['masuk', 'keluar']);
+            $table->enum('status', ['masuk', 'keluar','mati']);
             $table->timestamps();
         });
     }

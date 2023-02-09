@@ -67,7 +67,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count"><?= $totAyamMati ?></span></div>
+                                    <div class="stat-text"><span><?= $totAyamMati ?></span></div>
                                     <div class="stat-heading">Jumlah Ayam Mati</div>
                                 </div>
                             </div>
@@ -143,7 +143,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count"><?= $totPakanTerpakai ?></span></div>
+                                    <div class="stat-text"><span ><?= $totPakanTerpakai ?></span></div>
                                     <div class="stat-heading">Jumlah Pakan Terpakai</div>
                                 </div>
                             </div>
