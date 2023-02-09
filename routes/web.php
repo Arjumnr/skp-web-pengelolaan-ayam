@@ -111,3 +111,6 @@ Route::get('/tes', function () {
     // dd(session()->all());
     echo '</pre>';
 });
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

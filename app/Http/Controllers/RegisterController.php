@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class RegisterController extends Controller
 {
@@ -35,7 +37,8 @@ class RegisterController extends Controller
         } else {
             $dataUser = User::where('username', $request->username)->first();
             if ($dataUser) {
-                return redirect()->back()->with('alert', 'Username sudah ada !');
+                Alert::error('Gagal', 'Username sudah digunakan');
+                return back();
             } else {
                 $dataUser = new User();
                 $dataUser->name = $request->name;
@@ -44,7 +47,8 @@ class RegisterController extends Controller
                 $dataUser->role = 2;
                 $dataUser->save();
 
-                return redirect()->back()->with('alert', 'Berhasil Daftar !');
+                Alert::success('Berhasil', 'Akun berhasil dibuat');
+                return back();
             }
         }
     }

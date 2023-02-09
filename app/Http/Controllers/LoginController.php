@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\ModelUser;
 use App\Models\User;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Facades\Alert;
+
+
 
 
 
@@ -23,7 +25,7 @@ class LoginController extends Controller
             } else if ($user->role == 2) {
                 return redirect()->intended('/');
             }
-        }else{
+        } else {
             return view('login');
         }
     }
@@ -57,16 +59,17 @@ class LoginController extends Controller
                         $request->session()->regenerate();
                         if ($user->role == 1) {
                             return redirect()->intended('/');
-                        } 
-                        else if ($user->role == 2) {
+                        } else if ($user->role == 2) {
                             return redirect()->intended('/');
                         }
                     }
                 } else {
-                    return redirect()->back()->with('alert', 'Username/Password , Salah !');
+                    Alert::error('Akun tidak ditemukan !');
+                    return back();
                 }
             } else {
-                return redirect()->back()->with('alert', 'Username/Password , Salah !');
+                Alert::error('Akun tidak ditemukan !');
+                return back();
             }
         }
     }
