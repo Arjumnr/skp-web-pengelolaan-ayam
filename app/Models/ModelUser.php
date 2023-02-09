@@ -21,4 +21,10 @@ class ModelUser extends Model
     {
         return Carbon::parse($this->attributes['created_at'])->translatedFormat('l, d F Y ');
     }
+
+    //relasi one to many
+    public function nilai()
+    {
+        return $this->hasMany('App\Models\ModelUser');
+    }
 }

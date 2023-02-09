@@ -25,4 +25,10 @@ class ModelAyam extends Model
     {
         return Carbon::parse($this->attributes['created_at'])->translatedFormat('l, d F Y ');
     }
+
+    //relasi ke user
+    public function user()
+    {
+        return $this->belongsTo('App\Models\ModelAyam', 'user_id', 'id');
+    }
 }
