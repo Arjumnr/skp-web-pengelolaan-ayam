@@ -19,12 +19,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Peternak</th>
-                                    <th>Nomor</th>
-                                    <th>Nama Pembeli</th>
-                                    <th>Jumlah</th>
-                                    <th>Total Berat</th>
-                                    <th>Umur</th>
-                                    <th>Status</th>
+                                    <th>Nama Obat</th>
                                     <th>Hari/Tanggal</th>
                                 </tr>
                             </thead>
@@ -33,12 +28,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->user->name }}</td>
-                                        <td>{{ $item->nomor }}</td>
-                                        <td>{{ $item->nama_pembeli }}</td>
-                                        <td>{{ $item->jumlah }}</td>
-                                        <td>{{ $item->total_berat }}</td>
-                                        <td>{{ $item->umur }}</td>
-                                        <td>{{ $item->status }}</td>
+                                        <td>{{ $item->nama_obat }}</td>
                                         <td>{{ $item->created_at }}</td>
                                     </tr>
                                 @endforeach
@@ -52,5 +42,5 @@
 @endsection
 
 @section('script')
-    @include('admin.ayam.js')
+    @include('admin.obat.js')
 @endsection

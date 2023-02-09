@@ -1,18 +1,19 @@
 @extends('_layouts.index')
 @section('content')
     <div class="animated fadeIn">
-        <!-- Widgets  -->
+
+        {{-- DATA AYAM --}}
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-five">
                             <div class="stat-icon dib flat-color-1">
-                                <i class="pe-7s-cash"></i>
+                                <i class="pe-7s-note2"></i>
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">23569</span></div>
+                                    <div class="stat-text"><?= $totAyam ?></span></div>
                                     <div class="stat-heading">Jumlah Ayam </div>
                                 </div>
                             </div>
@@ -26,12 +27,12 @@
                     <div class="card-body">
                         <div class="stat-widget-five">
                             <div class="stat-icon dib flat-color-2">
-                                <i class="pe-7s-cart"></i>
+                                <i class="pe-7s-note2"></i>
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">3435</span></div>
-                                    <div class="stat-heading">Jumlah Pakan</div>
+                                    <div class="stat-text"><?= $totAyamMasuk ?></span></div>
+                                    <div class="stat-heading">Jumlah Ayam Masuk</div>
                                 </div>
                             </div>
                         </div>
@@ -44,12 +45,12 @@
                     <div class="card-body">
                         <div class="stat-widget-five">
                             <div class="stat-icon dib flat-color-3">
-                                <i class="pe-7s-browser"></i>
+                                <i class="pe-7s-note2"></i>
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">349</span></div>
-                                    <div class="stat-heading">Jumlah Obat</div>
+                                    <div class="stat-text"><?= $totAyamKeluar ?></span></div>
+                                    <div class="stat-heading">Jumlah Ayam Keluar</div>
                                 </div>
                             </div>
                         </div>
@@ -57,68 +58,123 @@
                 </div>
             </div>
 
-            {{-- <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-five">
                             <div class="stat-icon dib flat-color-4">
-                                <i class="pe-7s-users"></i>
+                                <i class="pe-7s-note2"></i>
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count">2986</span></div>
-                                    <div class="stat-heading">Clients</div>
+                                    <div class="stat-text"><span class="count"><?= $totAyamMati ?></span></div>
+                                    <div class="stat-heading">Jumlah Ayam Mati</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
         </div>
-        <!-- /Widgets -->
-       
-      
-        
-        
-        <!-- Modal - Calendar - Add Category -->
-        <div class="modal fade none-border" id="add-category">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title"><strong>Add a category </strong></h4>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label class="control-label">Category Name</label>
-                                    <input class="form-control form-white" placeholder="Enter name" type="text"
-                                        name="category-name" />
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="control-label">Choose Category Color</label>
-                                    <select class="form-control form-white" data-placeholder="Choose a color..."
-                                        name="category-color">
-                                        <option value="success">Success</option>
-                                        <option value="danger">Danger</option>
-                                        <option value="info">Info</option>
-                                        <option value="pink">Pink</option>
-                                        <option value="primary">Primary</option>
-                                        <option value="warning">Warning</option>
-                                    </select>
+
+
+        {{-- DATA PAKAN --}}
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-1">
+                                <i class="pe-7s-box2"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text"><?= $totPakan ?></span></div>
+                                    <div class="stat-heading">Jumlah Pakan </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-danger waves-effect waves-light save-category"
-                            data-dismiss="modal">Save</button>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-2">
+                                <i class="pe-7s-box2"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text"><?= $totPakanMasuk ?></span></div>
+                                    <div class="stat-heading">Jumlah Pakan Masuk</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-3">
+                                <i class="pe-7s-box2"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text"><?= $totPakanKeluar ?></span></div>
+                                    <div class="stat-heading">Jumlah Pakan Keluar</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-4">
+                                <i class="pe-7s-box2"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text"><span class="count"><?= $totPakanTerpakai ?></span></div>
+                                    <div class="stat-heading">Jumlah Pakan Terpakai</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- /#add-category -->
+
+
+        {{-- DATA OBAT  --}}
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-1">
+                                <i class="pe-7s-eyedropper"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text"><?= $totObat ?></span></div>
+                                    <div class="stat-heading">Jumlah Obat </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 @endsection

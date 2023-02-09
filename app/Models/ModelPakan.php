@@ -17,8 +17,14 @@ class ModelPakan extends Model
         'status',
 
     ];
+    
     public function getCreatedAtAttribute($value)
     {
         return Carbon::parse($this->attributes['created_at'])->translatedFormat('l, d F Y ');
+    }
+
+    public function user()
+    {
+        return $this->hasOne('App\Models\ModelUser', 'id', 'user_id');
     }
 }

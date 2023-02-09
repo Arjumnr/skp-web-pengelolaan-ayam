@@ -10,6 +10,7 @@ use App\Http\Controllers\Ayam\AyamMasukController;
 use App\Http\Controllers\Ayam\AyamKeluarController;
 use App\Http\Controllers\AyamController;
 use App\Http\Controllers\Obat\ObatMasukController;
+use App\Http\Controllers\ObatController;
 use App\Http\Controllers\Pakan\PakanMasukController;
 use App\Http\Controllers\Pakan\PakanKeluarController;
 use App\Http\Controllers\Pakan\PakanTerpakaiController;
@@ -47,8 +48,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['cekRole:1']], function () {
         Route::resource('/akun', AkunController::class);
         Route::resource('/ayam', AyamController::class);
-        Route::resource('/pakan', AkunController::class);
-        Route::resource('/obat', AkunController::class);
+        Route::resource('/pakan', PakanController::class);
+        Route::resource('/obatt', ObatController::class);
 
 
         //WISATA

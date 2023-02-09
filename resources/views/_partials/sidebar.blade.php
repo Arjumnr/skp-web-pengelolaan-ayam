@@ -8,16 +8,16 @@
                 </li>
                 <li class="menu-title">Data Peternak</li>
                 <li class="{{ set_active('akun') }}">
-                    <a href="{{ url('akun') }}"><i class="menu-icon fa fa-laptop"></i> Akun </a>
+                    <a href="{{ url('akun') }}"><i class="menu-icon fa fa-user"></i> Akun </a>
                 </li>
                 <li class="{{ set_active('ayam') }}">
-                    <a href="{{ url('ayam') }}"><i class="menu-icon fa fa-laptop"></i> Ayam </a>
+                    <a href="{{ url('ayam') }}"><i class="menu-icon fa fa-file"></i> Ayam </a>
                 </li>
                 <li class="{{ set_active('pakan') }}">
-                    <a href="{{ url('pakan') }}"><i class="menu-icon fa fa-laptop"></i> Pakan </a>
+                    <a href="{{ url('pakan') }}"><i class="menu-icon fa fa-archive"></i> Pakan </a>
                 </li>
-                <li class="{{ set_active('obat') }}">
-                    <a href="{{ url('obat') }}"><i class="menu-icon fa fa-laptop"></i> Obat </a>
+                <li class="{{ set_active('obatt') }}">
+                    <a href="{{ url('obatt') }}"><i class="menu-icon fa fa-medkit"></i> Obat </a>
                 </li>
                 {{-- <li class="{{ set_active('ayam-keluar') }}">
                     <a href="{{ url('ayam-keluar') }}"><i class="menu-icon fa fa-laptop"></i>Ayam Keluar </a>

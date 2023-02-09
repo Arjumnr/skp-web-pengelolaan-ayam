@@ -15,10 +15,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nomor</th>
                                     <th>Jumlah</th>
-                                    <th>Total Berat</th>
-                                    <th>Umur</th>
                                     <th>Hari/Tanggal</th>
                                     <th>Action</th>
                                 </tr>
@@ -26,7 +23,7 @@
                             <tbody>
                             </tbody>
                         </table>
-                        @include('peternak.ayam.masuk.modal')
+                        @include('peternak.ayam.mati.modal')
                     </div>
                 </div>
             </div>
@@ -35,5 +32,5 @@
 @endsection
 
 @section('script')
-    @include('peternak.ayam.masuk.js')
+    @include('peternak.ayam.mati.js')
 @endsection

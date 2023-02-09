@@ -8,24 +8,24 @@
                 </li>
                 <li class="menu-title">Data Ayam</li>
                 <li class="{{ set_active('ayam-masuk') }}">
-                    <a href="{{ url('ayam-masuk') }}"><i class="menu-icon fa fa-laptop"></i>Ayam Masuk </a>
+                    <a href="{{ url('ayam-masuk') }}"><i class="menu-icon fa fa-file"></i>Ayam Masuk </a>
                 </li>
                 <li class="{{ set_active('ayam-keluar') }}">
-                    <a href="{{ url('ayam-keluar') }}"><i class="menu-icon fa fa-laptop"></i>Ayam Keluar </a>
+                    <a href="{{ url('ayam-keluar') }}"><i class="menu-icon fa fa-file"></i>Ayam Keluar </a>
                 </li>
                 <li class="menu-title">Data Pakan</li>
                 <li class="{{ set_active('pakan-masuk') }}">
-                    <a href="{{ url('pakan-masuk') }}"><i class="menu-icon fa fa-laptop"></i>Pakan Masuk </a>
+                    <a href="{{ url('pakan-masuk') }}"><i class="menu-icon fa fa-archive"></i>Pakan Masuk </a>
                 </li>
                 <li class="{{ set_active('pakan-keluar') }}">
-                    <a href="{{ url('pakan-keluar') }}"><i class="menu-icon fa fa-laptop"></i>Pakan Keluar </a>
+                    <a href="{{ url('pakan-keluar') }}"><i class="menu-icon fa fa-square-o"></i>Pakan Keluar </a>
                 </li>
                 <li class="{{ set_active('pakan-terpakai') }}">
-                    <a href="{{ url('pakan-terpakai') }}"><i class="menu-icon fa fa-laptop"></i>Pakan Terpakai </a>
+                    <a href="{{ url('pakan-terpakai') }}"><i class="menu-icon fa fa-th"></i>Pakan Terpakai </a>
                 </li>
                 <li class="menu-title">Data Obat</li>
                 <li class="{{ set_active('obat') }}">
-                    <a href="{{ url('obat') }}"><i class="menu-icon fa fa-laptop"></i>Obat </a>
+                    <a href="{{ url('obat') }}"><i class="menu-icon fa fa-medkit"></i>Obat </a>
                 </li>
 
                 

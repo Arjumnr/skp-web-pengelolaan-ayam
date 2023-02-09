@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Data Ayam </strong>
+                        <strong class="card-title">Data Pakan </strong>
                         <mark> *** : Lakukan Filter sebelum mencetak</mark>
 
                         {{-- <button type="button" id="createToExcel" class="btn btn-info btn-sm float-center" >Buat Laporan</button> --}}
@@ -19,12 +19,9 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Peternak</th>
-                                    <th>Nomor</th>
-                                    <th>Nama Pembeli</th>
-                                    <th>Jumlah</th>
-                                    <th>Total Berat</th>
-                                    <th>Umur</th>
                                     <th>Status</th>
+                                    <th>Jumlah</th>
+                                    <th>Alamat Keluar</th>
                                     <th>Hari/Tanggal</th>
                                 </tr>
                             </thead>
@@ -33,12 +30,9 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->user->name }}</td>
-                                        <td>{{ $item->nomor }}</td>
-                                        <td>{{ $item->nama_pembeli }}</td>
-                                        <td>{{ $item->jumlah }}</td>
-                                        <td>{{ $item->total_berat }}</td>
-                                        <td>{{ $item->umur }}</td>
                                         <td>{{ $item->status }}</td>
+                                        <td>{{ $item->jumlah }}</td>
+                                        <td>{{ $item->keluar_ke }}</td>
                                         <td>{{ $item->created_at }}</td>
                                     </tr>
                                 @endforeach
@@ -52,5 +46,5 @@
 @endsection
 
 @section('script')
-    @include('admin.ayam.js')
+    @include('admin.pakan.js')
 @endsection
