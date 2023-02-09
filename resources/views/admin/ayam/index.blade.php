@@ -7,11 +7,10 @@
                 <div class="card">
                     <div class="card-header">
                         <strong class="card-title">Data Ayam </strong>
-                        {{-- <button type="button" id="createData" class="btn btn-info btn-sm float-right" data-toggle="modal"
-                            data-target="#mediumModal">Tambah Data</button> --}}
+                        {{-- <button type="button" id="createToExcel" class="btn btn-info btn-sm float-center" >Buat Laporan</button> --}}
                     </div>
                     <div class="card-body">
-                        <table class="table table-bordered data-table">
+                        <table class="table table-bordered data-table" id="myTable">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -23,10 +22,22 @@
                                     <th>Umur</th>
                                     <th>Status</th>
                                     <th>Hari/Tanggal</th>
-                                    {{-- <th></th> --}}
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($data as $item)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->user->name }}</td>
+                                        <td>{{ $item->nomor }}</td>
+                                        <td>{{ $item->nama_pembeli }}</td>
+                                        <td>{{ $item->jumlah }}</td>
+                                        <td>{{ $item->total_berat }}</td>
+                                        <td>{{ $item->umur }}</td>
+                                        <td>{{ $item->status }}</td>
+                                        <td>{{ $item->created_at }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

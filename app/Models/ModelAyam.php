@@ -29,6 +29,6 @@ class ModelAyam extends Model
     //relasi ke user
     public function user()
     {
-        return $this->belongsTo('App\Models\ModelAyam', 'user_id', 'id');
+        return $this->hasOne('App\Models\ModelUser', 'id', 'user_id');
     }
 }

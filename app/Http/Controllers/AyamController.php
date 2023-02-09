@@ -12,22 +12,20 @@ class AyamController extends Controller
     public function index(Request $request)
     {
         try {
-            $data = ModelAyam::all();
-            //get nama user dari model user
-            $model = ModelAyam::with('user');
+            
+            $data = ModelAyam::with('user')->get();
 
-            if ($request->ajax()) {
-                return Datatables::of($data)
-                //user_id adalah nama kolom di tabel ayam
-                    ->addIndexColumn('id', function ($data) {
-                        return $data->user->name;
-                    })
-                    ->make(true);
-            }
-            return view('admin.ayam.index');
+            // if ($request->ajax()) {
+            //     return Datatables::of($data)
+            //     //user_id adalah nama kolom di tabel ayam
+            //         ->addIndexColumn('id', function ($data) {
+            //             return $data->user->name;
+            //         })
+            //         ->make(true);
+            // }
+            return view('admin.ayam.index',compact('data'));
 
-            // $name = $data->user->name;
-            // return response()->json(['tes' => $name]);
+            
         } catch (\Exception $e) {
             return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
         }
