@@ -20,6 +20,7 @@
                                     <th>No</th>
                                     <th>Peternak</th>
                                     <th>Nama Obat</th>
+                                    <th>Jumlah Obat</th>
                                     <th>Hari/Tanggal</th>
                                 </tr>
                             </thead>
@@ -29,6 +30,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->user->name }}</td>
                                         <td>{{ $item->nama_obat }}</td>
+                                        <td>{{ $item->jumlah }}</td>
                                         <td>{{ $item->created_at }}</td>
                                     </tr>
                                 @endforeach

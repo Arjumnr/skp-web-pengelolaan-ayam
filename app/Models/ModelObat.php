@@ -13,6 +13,7 @@ class ModelObat extends Model
     protected $fillable = [
         'user_id',
         'nama_obat',
+        'jumlah',
 
     ];
 

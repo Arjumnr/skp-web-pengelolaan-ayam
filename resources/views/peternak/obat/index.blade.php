@@ -16,6 +16,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Obat</th>
+                                    <th>Jumlah Obat</th>
                                     <th>Hari/Tanggal</th>
                                     <th>Action</th>
                                 </tr>

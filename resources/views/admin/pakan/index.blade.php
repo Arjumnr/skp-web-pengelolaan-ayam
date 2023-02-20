@@ -21,6 +21,7 @@
                                     <th>Peternak</th>
                                     <th>Status</th>
                                     <th>Jumlah</th>
+                                    <th>Jenis Pakan</th>
                                     <th>Alamat Keluar</th>
                                     <th>Hari/Tanggal</th>
                                 </tr>
@@ -32,6 +33,7 @@
                                         <td>{{ $item->user->name }}</td>
                                         <td>{{ $item->status }}</td>
                                         <td>{{ $item->jumlah }}</td>
+                                        <td>{{ $item->jenis }}</td>
                                         <td>{{ $item->keluar_ke }}</td>
                                         <td>{{ $item->created_at }}</td>
                                     </tr>

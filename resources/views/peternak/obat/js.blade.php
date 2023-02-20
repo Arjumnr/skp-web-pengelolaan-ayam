@@ -19,6 +19,10 @@
                     name: 'nama_obat'
                 },
                 {
+                    data: 'jumlah',
+                    name: 'jumlah'
+                },
+                {
                     data: 'created_at',
                     name: 'created_at'
                 },
@@ -59,6 +63,7 @@
                 $('#modalObat').modal('show');
                 $('#data_id').val(data_id);
                 $('#nama_obat').val(data.nama_obat);
+                $('#jumlah').val(data.jumlah);
             })
 
         });

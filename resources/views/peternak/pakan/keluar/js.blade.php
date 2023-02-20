@@ -20,7 +20,10 @@
                 },
                 {
                     data: 'jumlah',
-                    name: 'jumlah'
+                    name: 'jumlah',
+                    render: function(data, type, row) {
+                        return data + ' Kg';
+                    }
                 },
                 {
                     data: 'jenis',

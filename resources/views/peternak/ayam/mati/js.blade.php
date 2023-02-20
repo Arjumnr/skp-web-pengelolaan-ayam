@@ -16,7 +16,10 @@
                 },
                 {
                     data: 'jumlah',
-                    name: 'jumlah'
+                    name: 'jumlah',
+                    render: function(data, type, row) {
+                        return data + ' Ekor';
+                    }
                 },
                 {
                     data: 'created_at',

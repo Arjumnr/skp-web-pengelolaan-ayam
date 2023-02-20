@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id')->nullable();
             $table->string('nama_obat');
+            $table->integer('jumlah');
             $table->timestamps();
         });
 

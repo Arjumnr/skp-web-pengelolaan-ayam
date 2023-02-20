@@ -20,15 +20,24 @@
                 },
                 {
                     data: 'jumlah',
-                    name: 'jumlah'
+                    name: 'jumlah',
+                    render: function(data, type, row) {
+                        return data + ' Ekor';
+                    }
                 },
                 {
                     data: 'total_berat',
-                    name: 'total_berat'
+                    name: 'total_berat',
+                    render: function(data, type, row) {
+                        return data + ' Kg';
+                    }
                 },
                 {
                     data: 'umur',
-                    name: 'umur'
+                    name: 'umur',
+                    render: function(data, type, row) {
+                        return data + ' Hari';
+                    }
                 },
                 {
                     data: 'created_at',

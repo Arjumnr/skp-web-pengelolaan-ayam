@@ -36,6 +36,7 @@ class ObatMasukController extends Controller
                 [
                     'user_id' => $user_id,
                     'nama_obat' => $request->nama_obat,
+                    'jumlah' => $request->jumlah,
                 ]
             );
             return response()->json(['status' => 'success', 'message' => 'Save data successfully.']);
@@ -65,6 +66,7 @@ class ObatMasukController extends Controller
         try {
             $data->update([
                 'nama_obat' => $request->nama_obat,
+                'jumlah' => $request->jumlah,
                 
             ]);
             return response()->json(['status' => 'success', 'message' => 'Update data successfully.']);

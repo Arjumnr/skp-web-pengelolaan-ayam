@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Data Ayam Keluar</strong>
+                        <strong class="card-title">Data Ayam Masuk</strong>
                         <button type="button" id="createData" class="btn btn-info btn-sm float-right" data-toggle="modal"
                             data-target="#mediumModal">Tambah Data</button>
                     </div>

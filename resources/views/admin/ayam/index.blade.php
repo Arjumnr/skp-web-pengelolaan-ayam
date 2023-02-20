@@ -35,9 +35,9 @@
                                         <td>{{ $item->user->name }}</td>
                                         <td>{{ $item->nomor }}</td>
                                         <td>{{ $item->nama_pembeli }}</td>
-                                        <td>{{ $item->jumlah }}</td>
-                                        <td>{{ $item->total_berat }}</td>
-                                        <td>{{ $item->umur }}</td>
+                                        <td>{{ $item->jumlah }} Ekor</td>
+                                        <td>{{ $item->total_berat }} Kg</td>
+                                        <td>{{ $item->umur }} Hari</td>
                                         <td>{{ $item->status }}</td>
                                         <td>{{ $item->created_at }}</td>
                                     </tr>

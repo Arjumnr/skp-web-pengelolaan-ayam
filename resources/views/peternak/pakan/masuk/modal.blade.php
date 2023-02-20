@@ -15,7 +15,10 @@
                     <div class="form-group row">
                         <label for="jumlah" class="col-sm-2 col-form-label">Jumlah</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="jumlah" name="jumlah" placeholder="10">
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="jumlah" name="jumlah">
+                                <div class="input-group-addon">Kg</div>
+                            </div>
                         </div>
                     </div>
 
