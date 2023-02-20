@@ -17,6 +17,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Jumlah</th>
+                                    <th>Jenis Pakan</th>
                                     <th>Hari/Tanggal</th>
                                     <th>Action</th>
                                 </tr>

@@ -18,6 +18,7 @@
                                     <th>No</th>
                                     <th>Alamat Keluar</th>
                                     <th>Jumlah</th>
+                                    <th>Jenis Pakan</th>
                                     <th>Hari/Tanggal</th>
                                     <th>Action</th>
                                 </tr>

@@ -15,6 +15,7 @@ class ModelPakan extends Model
         'keluar_ke',
         'jumlah',
         'status',
+        'jenis',
 
     ];
     

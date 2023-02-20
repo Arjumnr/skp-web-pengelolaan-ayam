@@ -19,6 +19,10 @@
                     name: 'jumlah'
                 },
                 {
+                    data: 'jenis',
+                    name: 'jenis'
+                },
+                {
                     data: 'created_at',
                     name: 'created_at'
                 },
@@ -59,6 +63,7 @@
                 $('#modalPakanTerpakai').modal('show');
                 $('#data_id').val(data_id);
                 $('#jumlah').val(data.jumlah);
+                $('#jenis').val(data.jenis);
             })
 
 

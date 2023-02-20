@@ -15,7 +15,19 @@
                     <div class="form-group row">
                         <label for="jumlah" class="col-sm-2 col-form-label">Jumlah</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="jumlah" name="jumlah">
+                            <input type="number" class="form-control" id="jumlah" name="jumlah" placeholder="10">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="jenis" class="col-sm-2 col-form-label">Jeni Pakan</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="jenis" name="jenis">
+                                <option value="">--- Pilih Jenis Pakan ---</option>
+                                <option value="SB10">SB10</option>
+                                <option value="SB11">SB11</option>
+                                <option value="SB12">SB12</option>
+                            </select>
                         </div>
                     </div>
 

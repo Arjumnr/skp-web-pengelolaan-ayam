@@ -37,6 +37,7 @@ class PakanMasukController extends Controller
                     'user_id' => $user_id,
                     'jumlah' => $request->jumlah,
                     'status' => 'masuk',
+                    'jenis' => $request->jenis,
                 ]
             );
             return response()->json(['status' => 'success', 'message' => 'Save data successfully.']);
@@ -66,6 +67,7 @@ class PakanMasukController extends Controller
         try {
             $data->update([
                 'jumlah' => $request->jumlah,
+                'jenis' => $request->jenis,
             ]);
             return response()->json(['status' => 'success', 'message' => 'Update data successfully.']);
         } catch (\Exception $e) {

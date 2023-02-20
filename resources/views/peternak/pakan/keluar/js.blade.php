@@ -18,10 +18,13 @@
                     data: 'keluar_ke',
                     name: 'keluar_ke'
                 },
-                
                 {
                     data: 'jumlah',
                     name: 'jumlah'
+                },
+                {
+                    data: 'jenis',
+                    name: 'jenis'
                 },
                 {
                     data: 'created_at',
@@ -65,6 +68,7 @@
                 $('#data_id').val(data_id);
                 $('#keluar_ke').val(data.keluar_ke);
                 $('#jumlah').val(data.jumlah);
+                $('#jenis').val(data.jenis);
             })
 
 

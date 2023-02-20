@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('keluar_ke')->nullable();
             $table->integer('jumlah');
             $table->enum('status', ['masuk', 'keluar','terpakai']);
+            $table->enum('jenis', ['SB10', 'SB11', 'SB12']);
             $table->timestamps();
         });
     }
